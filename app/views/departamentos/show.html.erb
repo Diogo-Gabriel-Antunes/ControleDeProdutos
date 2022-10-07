@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="m-8 container " >
+    <table class="table table-bordered table-hover mt-100">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Descrição</td>
+          <td>Departamento</td>
+          <td>Preço</td>
+          <td>Quantidade</td>
+          <td colspan="2"></td>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <%= render @produtos_por_departamento%>
+       
+      </tbody>
+    </table>
+</div>
+
+<div>
+  <%= link_to "Editar departamento", edit_departamento_path(@departamento) ,class:"btn btn-warning"%> |
+  <%= link_to "Voltar", departamentos_path,class:"btn btn-primary" %>
+
+
+</div>

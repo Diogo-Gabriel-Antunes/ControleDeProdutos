@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Departamentos</h1>
+
+<div id="departamentos">
+  <table class="table table-bordered table-hover mt-100">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          
+          <td colspan="3"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <%@departamentos.each do |departamento|%>
+          <tr>
+            <td>
+              <%=departamento.nome%>
+            </td>
+            <td>
+              <%=link_to "Ver produtos", departamento, class:"btn btn-info"%>
+            </td>
+            <td>
+              <%=link_to "Editar", edit_departamento_path(departamento) , class:"btn btn-warning"%>
+            </td>
+             <td>
+              <%= button_to "Remover", departamento, method: :delete, class:"btn btn-danger", data: {confirm: "Tem certeza que deseja deletar eeste produto?"} %>
+            </td>
+          </tr>
+          <%end%>
+      </tbody>
+    </table>
+</div>
+
+<%= link_to "Criar novo departamento", new_departamento_path,class:"btn btn-dark" %>
